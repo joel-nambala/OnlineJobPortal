@@ -56,7 +56,40 @@ namespace OnlineJobPortal.Admin
 
         protected void gvContactList_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+            try
+            {
+                GridViewRow row = gvContactList.Rows[e.RowIndex];
+                int contactId = Convert.ToInt32(gvContactList.DataKeys[e.RowIndex].Values[0]);
+                connection = new SqlConnection(str);
+                command = new SqlCommand("Delete from Contacts where ContactId = @id", connection);
+                command.Parameters.AddWithValue("@id", contactId);
+                connection.Open();
 
+                int r = command.ExecuteNonQuery();
+                if (r > 0)
+                {
+                    lblMsg.Text = "Contact has been deleted successifully!";
+                    lblMsg.CssClass = "alert alert-success";
+                }
+                else
+                {
+                    lblMsg.Text = "Cannot delete this record...!";
+                    lblMsg.CssClass = "alert alert-danger";
+                }
+                connection.Close();
+                gvContactList.EditIndex = -1;
+                ShowContact();
+            }
+            catch (Exception ex)
+            {
+                Message(ex.Message);
+                ex.Data.Clear();
+            }
+        }
+        public void Message(string message)
+        {
+            string strScript = "<script>alert('" + message + "')</script>";
+            ClientScript.RegisterStartupScript(GetType(), "Client Script", strScript.ToString());
         }
     }
 }

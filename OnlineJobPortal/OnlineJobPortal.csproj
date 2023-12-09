@@ -237,6 +237,7 @@
     <Content Include="User\Login.aspx" />
     <Content Include="User\Profile.aspx" />
     <Content Include="User\Register.aspx" />
+    <Content Include="User\ResumeBuilder.aspx" />
     <Content Include="vendors\jQuery\jQuery.js" />
     <Content Include="vendors\select2\css\select2.css" />
     <Content Include="vendors\select2\css\select2.min.css" />
@@ -418,6 +419,13 @@
     </Compile>
     <Compile Include="User\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\ResumeBuilder.aspx.cs">
+      <DependentUpon>ResumeBuilder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\ResumeBuilder.aspx.designer.cs">
+      <DependentUpon>ResumeBuilder.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
