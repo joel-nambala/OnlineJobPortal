@@ -54,7 +54,7 @@ namespace OnlineJobPortal.User
         {
             if(e.CommandName == "EditUserProfile")
             {
-                Response.Redirect($"ResumeBuilder.aspx?id={e.CommandArgument.ToString()}");
+                Response.Redirect($"ResumeBuilder.aspx?id={e.CommandArgument}");
             }
         }
     }

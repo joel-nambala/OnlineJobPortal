@@ -57,6 +57,7 @@ namespace OnlineJobPortal.User
                 command.Parameters.AddWithValue("@Mobile", txtMobile.Text.ToString());
                 command.Parameters.AddWithValue("@Email", txtEmail.Text.ToString());
                 command.Parameters.AddWithValue("@Country", ddlCountry.SelectedValue);
+                command.Parameters.AddWithValue("@Gender", ddlGender.SelectedValue);
                 connection.Open();
 
                 int r = command.ExecuteNonQuery();

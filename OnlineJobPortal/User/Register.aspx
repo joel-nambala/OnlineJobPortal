@@ -64,6 +64,15 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
+                                    <label>Gender</label>
+                                    <asp:DropDownList ID="ddlGender" class="form-control" runat="server">
+                                        <asp:ListItem>Male</asp:ListItem>
+                                        <asp:ListItem>Female</asp:ListItem>
+                                    </asp:DropDownList>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
                                     <label>Country</label>
                                     <asp:DropDownList ID="ddlCountry" class="form-control select2" runat="server"></asp:DropDownList>
                                 </div>
